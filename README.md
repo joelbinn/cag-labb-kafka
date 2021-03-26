@@ -38,6 +38,7 @@ k-groups --list
 
 k-consumer --topic cag-checkin --from-beginning
 
+k-groups --reset-offsets --to-offset 4 --group order-processor-jobi --topic orders-jobi --execute
 Hur starta från därman var senast?
 
 ## Partitioner

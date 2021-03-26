@@ -27,7 +27,11 @@ public class OrderProducerResource {
     @PostMapping("orders/order")
     public void produceOrder(@RequestBody Order order) throws JsonProcessingException {
         log.info(order.toString());
-        kafkaTemplate.send(configuration.getTopic(), mapper.writeValueAsString(order));
+        kafkaTemplate.send(configuration.getTopic(), mapper.writeValueAsString(order))
+          .addCallback(
+            result -> System.out.println("Det gick bra! "+result),
+            Throwable::printStackTrace
+          );
     }
 
 }
