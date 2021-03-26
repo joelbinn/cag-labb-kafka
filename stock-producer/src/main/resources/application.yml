@@ -3,6 +3,6 @@ server.port: 9004
 
 kafka:
   servers:
-  topic: stocks-dawi
+  topic: stocks-jobi
   partitions: 1
   replication: 3

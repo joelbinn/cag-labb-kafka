@@ -1,8 +1,8 @@
 server.port: 9005
 
-stock-topic: stocks-dawi
+stock-topic: stocks-jobi
 
 kafka:
-  servers:
-  orderTopic: orders-dawi
-  backorderTopic: backorders-dawi
+  servers: 78.70.35.171:9001,78.70.35.171:9002,78.70.35.171:9003
+  orderTopic: orders-jobi
+  backorderTopic: backorders-jobi

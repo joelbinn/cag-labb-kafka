@@ -1,7 +1,7 @@
 
 server.port: 9001
 kafka:
-  servers:
-  topic: orders-dawi
+  servers: 78.70.35.171:9001,78.70.35.171:9002,78.70.35.171:9003
+  topic: orders-jobi
   partitions: 1
   replication: 3

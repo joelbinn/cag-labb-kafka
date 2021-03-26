@@ -12,4 +12,5 @@ public class OrderProducerConfiguration {
     private String topic;
     private int replication;
     private int partitions;
+
 }

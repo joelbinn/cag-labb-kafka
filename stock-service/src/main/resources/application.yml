@@ -1,6 +1,6 @@
 server.port: 9002
 kafka:
   servers:
-  topic: stocks-dawi
-  application: stock-streaming-dawi
-  globalStore: stock-store-dawi
+  topic: stocks-jobi
+  application: stock-streaming-jobi
+  globalStore: stock-store-jobi
