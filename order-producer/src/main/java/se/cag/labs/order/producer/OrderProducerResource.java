@@ -14,16 +14,16 @@ import se.cag.labs.kafka.model.Order;
 @Slf4j
 public class OrderProducerResource {
 
-    private OrderProducerConfiguration configuration;
+    private final OrderProducerConfiguration configuration;
 
-    private ObjectMapper mapper = new ObjectMapper();
+    private final ObjectMapper mapper = new ObjectMapper();
 
-    public OrderProducerResource(OrderProducerConfiguration configuration) {
+    private final KafkaTemplate<String, String> kafkaTemplate;
+
+    public OrderProducerResource(OrderProducerConfiguration configuration, KafkaTemplate<String, String> kafkaTemplate) {
         this.configuration = configuration;
+        this.kafkaTemplate = kafkaTemplate;
     }
-
-    @Autowired
-    private KafkaTemplate<String, String> kafkaTemplate;
 
     @PostMapping("orders/order")
     public void produceOrder(@RequestBody Order order) throws JsonProcessingException {

@@ -7,7 +7,6 @@ package se.cag.labs.order.producer;
 
 import org.apache.kafka.clients.admin.AdminClientConfig;
 import org.apache.kafka.clients.admin.NewTopic;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.core.KafkaAdmin;
@@ -17,8 +16,11 @@ import java.util.Map;
 
 @Configuration
 public class KafkaTopicConfig {
-  @Autowired
-  OrderProducerConfiguration orderProducerConfiguration;
+  private final OrderProducerConfiguration orderProducerConfiguration;
+
+  public KafkaTopicConfig(OrderProducerConfiguration orderProducerConfiguration) {
+    this.orderProducerConfiguration = orderProducerConfiguration;
+  }
 
   @Bean
   public KafkaAdmin kafkaAdmin() {

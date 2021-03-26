@@ -27,3 +27,20 @@ no cluster no fun. My Kafka servers are 2.6.1 , with Scala 2.12.
   ```
   $ source aliases.sh
   ```
+
+# Mina noteringar
+## Kommandon
+k-topic  --create --topic cag-checkin --replication-factor --partitions
+k-consumer --topic cag-checkin
+k-producer cag-checkin
+
+k-groups --list
+
+k-consumer --topic cag-checkin --from-beginning
+
+Hur starta från därman var senast?
+
+## Partitioner
+Dela upp i partitioner för att kunna lastdela consumers.
+Ha fler consumers än partitions för att få redundans.
+Om man har fler partitions än consumers så kopplar consumern upp sig på alla partitioner.
